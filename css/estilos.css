@@ -11,24 +11,6 @@ body{
     margin:0;
     padding:0;
     box-sizing: border-box;
- }
-
-.content{
-    color:white;
-    background-color: rgb(59, 59, 59);
-    height: 100vh;
-    display:grid;
-    grid-template-areas :"header header header"
-                         "nav nav   nav"
-                         "section section section"
-                         "footer footer footer";
-
-    grid-template-columns : minmax(150px,20%) 1fr 20%;
-    grid-template-rows : 10% auto 25% 10%;
-    column-gap: 20px;
-    row-gap : 10px;
-    justify-content:start;
-   /* background-image: url("imagen grande que pesa mucho, que va bien para escritorio");*/
 }
 
 h1{
@@ -36,88 +18,110 @@ h1{
     font-size: 3rem;
     text-align: center;
 }
+
 h2{
     color: #a4888f;
     font-size: 2rem;
     text-align: center;
 }
 
-
-
 /*Header*/
 .header{
-    grid-area: header;
-    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px ;
-    background-color: rgb(145, 142, 135);
-    font-size: 10px;
+    justify-content: start; /* Alinear a la izquierda */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 1005;
+    height: 9vh; /* Altura del header */
+    padding: 0 0 0 200px; 
+    background-color: antiquewhite; 
+    font-size: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 
-    .logo{
-        width: 60px;
+    .contentLogo{
+        margin-right: 40px; /* Espacio entre el contenedor del logo y el menu */
+        
+        .logo {
+            width: 60px; 
+            height: auto; /* Mantener proporciones */
+            max-height: 100%;}
     }
-   
-    nav{
-        width: 50%;
-        grid-area: nav;
 
-        ul{
-            width: 100%;
-            display: flex;
-            list-style: none;
-            justify-content: space-between;
+    .navHeader {
+        .ulItems {
+            display: flex; /* Usar flexbox para el menú */
+            list-style: none; /* Sin viñetas */
+            padding-left: 0; /* Sin padding en la lista */
+            margin: 0; /* Sin margen */
+            justify-content: flex-start; /* Alinear a la izquierda */
             
-            li{
-                display: inline-block;
-                margin-right: 15px;
-            }
-            a{
-                text-decoration: none;
-                color:  #510d1b;
-                font-size: 1.7em;      
+            .liItem {
+                margin-right: 15px; /* Margen a la derecha entre elementos */
+                
+                a {
+                    text-decoration: none; /* Sin subrayado */
+                    color: #510d1b; /* Color del texto */
+                    font-size: 1.7em; /* Tamaño del texto */
+                    transition: color 0.3s; /* Transición suave para el color */
+                    
+                    /* Efecto de subrayado al pasar el mouse */
+                    &:hover {
+                        color: #b86d6d; /* Cambia el color al pasar el mouse */
+                    }
+                }
             }
         }
     }
 }
 
-.main {
-    grid-area : main;
-    /* Seccion principal del main */
-    .firstContent{
-        background-image: url("../assets/img/teaMain.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position:center center;
-        height: 100vh;
-        text-align: center;
+/*Main*/
 
-        .firstText{
-            text-align: center;
-            margin-inline: auto;
-            padding: 10px;
-            width: 100%;
-            font-size: 10px;
-            color: rgb(239, 213, 213);
-            filter: brightness(0.8);
-            backdrop-filter: blur(2px);
-            border-radius: 5%;
-            p{
-                font-size: 2.5em;
-            }
-            a{
-                display: inline-block;/*para usar las propiedades en bloque,como padding margin y border*/
-                text-decoration: none;
-                color: rgb(255, 255, 255);
-                font-size: 2.5em;
-                margin-top: 20px;
-                border: 1px solid rgb(255, 241, 241);
-                border-radius: 2.5%;
-                padding: 8px;
+/* Seccion principal del main */
+.firstContent{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url("../assets/img/teaMain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+    height: 91vh;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+    .firstText{
+        z-index: 1002;
+        width: 50%;
+        margin:0 auto;
+        margin-top: 30px;
+        margin-inline: auto;
+        padding: 10px;            
+        border:1px solid rgb(255, 241, 241);
+        border-radius: 5px;
+        text-align: center;
+        font-size: 10px;
+        color: rgb(239, 213, 213);
+        filter: brightness(0.8);
+        backdrop-filter: blur(2px);
+        p{
+            font-size: 2.5em;
+        }
+        a{
+            display: inline-block;/*para usar las propiedades en bloque,como padding margin y border*/
+            margin-top: 20px;
+            padding: 8px 16px; /* Ajuste en padding para un botón más grande */
+            font-size: 2.5em;
+            border: 1px solid rgb(255, 241, 241);
+            border-radius: 2.5%;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
+            transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+
+            &:hover {
+                transform: translateY(-2px); /* Efecto de elevación */
+                box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
             }
         }
-    
     }
 }
 /* Footer */
@@ -195,8 +199,10 @@ h2{
      
     }
    
-    .content > * {
-          background-color: rgb(105, 57, 236);
-         
-    }
- }
+/*Header*/
+.header{
+    grid-area: header;
+    padding: 2px 30px 2px 30px ;
+}
+
+}
