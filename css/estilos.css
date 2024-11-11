@@ -112,21 +112,131 @@ h2{
             border: 1px solid rgb(255, 241, 241);
             border-radius: 2.5%;
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: #eae8e8;
             box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
             transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
 
             &:hover {
                 transform: translateY(-2px); /* Efecto de elevación */
                 box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
+                color: rgb(255, 255, 255);
             }
         }
     }
 }
 
-/*Nuestros productos destacados */
+/* Nuestro productos*/
+.ProductsIndex {
+    h2 {
+        padding-top: 20px;
+        text-align: center;  /* Centrado del título */
+        font-size: 2rem;     /* Tamaño de fuente adecuado */
+    }
+
+    .galeryProducts {
+        width: 70%;           /* Ajustamos el tamaño de la galería */
+        height: 70%;
+        margin: 0 auto;
+        padding-top: 50px;
+        display: grid;
+        background-color: aqua;
+        grid-template-columns: repeat(6, 0.5fr);  /* Tres columnas iguales */
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;     /* Las filas se ajustan automáticamente */
+        grid-template-areas: 
+            "productOne productOne productTwo productTwo productThree productThree"
+            "productOne productOne productTwo productTwo productThree productThree"
+            "productOne productOne productFour productFour productFive productFive"
+            "productOne productOne productFour productFour productFive productFive"
+            "productSeven productSeven productSix productSix productFive productFive"
+            "productSeven productSeven productSix productSix productFive productFive";
+        gap: 25px;
+        overflow: hidden;  /* Evita que los elementos del grid se desborden */
+    }
+
+    .cardIndexOne,
+    .cardIndexTwo,
+    .cardIndexThree,
+    .cardIndexFour,
+    .cardIndexFive,
+    .cardIndexSix,
+    .cardIndexSeven {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;  /* Evita que las imágenes se salgan del contenedor */
+    }
+
+    .cardIndexOne img, .cardIndexTwo img, .cardIndexThree img, .cardIndexFour img, .cardIndexFive img, .cardIndexSix img, .cardIndexSeven img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  /* Ajusta la imagen al contenedor sin deformarla */
+        transition: transform 1s ease-in-out;  /* Transición suave para el zoom */
+        /* filter:grayscale(100%);*/
+    }
+    .cardIndexOne .texto, .cardIndexTwo .texto, .cardIndexThree .texto, .cardIndexFour .texto, .cardIndexFive .texto, .cardIndexSix .texto, .cardIndexSeven .texto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.7s ease-in-out;
+        color:rgba(0, 0, 0, 0.455);
+        font-size:2rem;
+    }
+    
+    .cardIndexOne:hover .texto, .cardIndexTwo:hover .texto, .cardIndexThree:hover .texto, .cardIndexFour:hover .texto, .cardIndexFive:hover .texto, .cardIndexSix:hover .texto, .cardIndexSeven:hover .texto {
+        opacity: 1; /* Mostrar el texto de aumento */
+        color:rgba(241, 146, 146, 0.831);
+    }
+
+    /* Efecto hover: aumentar la escala de la imagen */
+    .cardIndexOne:hover img, .cardIndexTwo:hover img, .cardIndexThree:hover img, .cardIndexFour:hover img, .cardIndexFive:hover img, .cardIndexSix:hover img, .cardIndexSeven:hover img {
+        transform: scale(1.2);  /* Aumenta el zoom de la imagen */
+        filter:grayscale(100%);
+    }
+
+    /* Especificar áreas de las tarjetas */
+    .cardIndexOne { grid-area: productOne; }
+    .cardIndexTwo { grid-area: productTwo; }
+    .cardIndexThree { grid-area: productThree; }
+    .cardIndexFour { grid-area: productFour; }
+    .cardIndexFive { grid-area: productFive; }
+    .cardIndexSix { grid-area: productSix; }
+    .cardIndexSeven { grid-area: productSeven; }
+
+    /* Medios para pantallas más pequeñas (Tablets) */
+    @media (max-width: 1024px) {
+        .galeryProducts {
+            width: 90%;  /* Reducir el tamaño de la galería en tabletas */
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+        }
+    }
+
+    /* Medios para pantallas móviles */
+    @media (max-width: 768px) {
+        .galeryProducts {
+            width: 95%;  /* Reducir aún más el tamaño de la galería en móviles */
+            grid-template-columns: 1fr;  /* Una columna en pantallas pequeñas */
+            gap: 15px; /* Reducir el espacio entre las imágenes */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .galeryProducts {
+            width: 100%;  /* 100% del ancho en pantallas muy pequeñas */
+            grid-template-columns: 1fr;  /* Una sola columna */
+        }
+
+        .cardIndexOne, .cardIndexTwo, .cardIndexThree, .cardIndexFour, .cardIndexFive, .cardIndexSix, .cardIndexSeven {
+            height: 200px;  /* Ajuste de altura para pantallas más pequeñas */
+        }
+    }
+}
+
+/* Mas productos destacados */
 .featuredProducts {
     padding: 20px;
+    background-color: #a5d6ba;
 
     .FeaturedProductsGalery {
         width: 70%;
@@ -170,6 +280,64 @@ h2{
         }
     }
 }
+
+.contentIndexUs{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url("../assets/img/UsLarge.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+    .ContentH1Us{
+        width: 50rem;
+        padding-bottom: 15%;
+        .h1Us{
+            text-align: start;
+            padding-left: 7rem;
+            filter: brightness(0.9);
+            backdrop-filter: blur(2px);
+            color: rgb(255, 172, 172);
+        }
+    }
+    .textUs {
+        width: 50%; /* Ajusta el ancho según lo necesites */
+        text-align: right; /* Alinea el texto a la derecha */
+        margin: 0 0 0 auto; /* Se asegura de que el texto esté debajo y pegado al margen derecho */
+        padding: 0.5rem 7rem 0.5rem 0rem;    
+        font-size: 10px;
+        color: rgb(244, 140, 140);
+        filter: brightness(0.9);
+        backdrop-filter: blur(2px); 
+        p{
+            font-size: 2.5em;
+        }
+        a{
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 16px;
+            font-size: 2.5em;
+            border: 1px solid rgb(255, 241, 241);
+            border-radius: 2.5%;
+            text-decoration: none;
+            color: #dfdede;
+            box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
+            transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+
+            &:hover {
+                transform: translateY(-2px); /* Efecto de elevación */
+                box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+}
+
 /*Productos que trabajamos */
 .button{
     display: inline-block;
@@ -275,10 +443,39 @@ h2{
      
     }
    
-/*Header*/
-.header{
-    grid-area: header;
-    padding: 2px 30px 2px 30px ;
+    /*Header*/
+    .header{
+        grid-area: header;
+        padding: 2px 30px 2px 30px ;
+    }
+} 
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr; /* En pantallas más pequeñas, las columnas se apilan */
+        gap: 20px;
+    }
+
+    .products-gallery {
+        grid-template-columns: 1fr; /* Una sola columna para los productos */
+    }
+
+    .brands-gallery {
+        grid-template-columns: 1fr; /* Una sola columna para las marcas */
+    }
 }
 
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Para pantallas móviles, una sola columna */
+    }
+
+    .products-gallery {
+        grid-template-columns: 1fr; /* Una sola columna para los productos */
+    }
+
+    .brand-card img {
+        width: 80px;  /* Ajustamos el tamaño de las imágenes de marcas */
+    }
 }
