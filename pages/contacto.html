@@ -19,76 +19,77 @@
 <!-- Comienza mi sitio-->
 <body>
     <header class="header">
-        <a href="../index.html">
-            <img class="logo" src="../assets/img/logo.png" alt="Logo de la tienda de La Casa del Tè">
-        </a>
+        <!-- Inicio de Menu / Logo -->
+        <div class="contentLogo">
+            <a href="#">
+                <img class="logo" src="../assets/img/logo.png" alt="Logo de la tienda de La Casa del Tè">
+            </a>
+        </div>
         <!-- Menu -->
         <nav class="navHeader">
-            <ul>
-                <li class="navLi"><a href="index.html"></a></li>
-                <li class="navLi"><a href="../pages/galeria.html">Productos</a></li>
-                <li class="navLi"><a href="../pages/contacto.html">Contacto</a></li>
-                <li class="navLi"><a href="../pages/nosotros.html">Nosotros</a></li>
-                <li class="navLi"><a href="../pages/carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <ul class="ulItems">
+                <li class="liItem"><a href="../index.html">Inicio</a></li>
+                <li class="liItem"><a href="../pages/galeria.html">Productos</a></li>
+                <li class="liItem"><a href="../pages/contacto.html">Contacto</a></li>
+                <li class="liItem"><a href="../pages/nosotros.html">Nosotros</a></li>
+                <li class="liItem"><a href="../pages/carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <!--IMAGEN DE FONDO-->
-        <section class="contenidoPrincipal">
-            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
-            <div class="textoPrincipal">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit, amet consectetur adipisicing elit.
-                </p>
-                <a href="./pages/productos.html">PRODUCTOS</a>
-            </div>       
-        </section>
-        
+
+        <section class="containerContact">
+            <div class="containerContactBox">
+                <div class="contactLeft">
+
+                </div>
+                <div class="contactRight">
+                    <h2 class="contactRightH2">Contactanos!</h2>
+                    <input type="text" class="contactRightFields" placeholder="Nombre y Apellido">
+                    <input type="email" class="contactRightFields" placeholder="Email">
+                    <input type="text" class="contactRightFields" placeholder="Telefono">
+                    <textarea class="contactRightFields contactTextArea" placeholder="Telefono"></textarea>
+                    <button class="contactBtn">Enviar</button>
+                </div>
+            </div>
+       </section>
+
     </main>
-    <footer class="footer">
-        <a href="../index.html">
-            <img class="logo" src="../assets/img/logo.png" alt="Logo de la tienda de La Casa del Tè">
-        </a>
-        <!-- Comienzo del Footer -->
-        <nav>
-            <ul class="navMenu">
-                <li class=""><a href="../index.html">Inicio</a></li>
-                <li class=""><a href="../pages/galeria.html">Productos</a></li>
-                <li class=""><a href="../pages/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul class="navInfo">
-                <li><a href="">Sobre Nosotros</a></li>
-                <li><a href="">Política de Privacidad</a></li>
-                <li><a href="">Términos y Condiciones</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul class="redes">
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-        </nav>
-        <div>
-            <form action="">
-                <input type="email" placeholder="Tu correo electrónico" id="emailSus" name="emailSus">
-                <input type="submit" value="Suscribirse">
-            </form>
+    <footer>
+        <div  class="footerStart">
+            <!-- Menú Principal -->
+            <div class="footer-column">
+                <nav>
+                    <ul class="navMenu">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/galeria.html">Productos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Menú de Información -->
+            <div class="footer-column">
+                <nav>
+                    <ul class="navInfo">
+                        <li><a href="../pages/nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <address class="navInfo">
+                    <p>Dirección: Calle del Tè 123, SMA, Neuquen</p>
+                    <p>Teléfono: (+54) 11-1111-1111</p>
+                    <p>Correo electrónico: contacto@casadelte.com</p>
+                </address>
+            </div>
+        </div>        
+        <div class="bottomBar">
+            <p>2024 Casa del Tè | Todos los derechos reservados</p> 
         </div>
-        <!--datos de contacto, direccion y telefono-->
-        <address>
-            <p>Dirección: Calle del Tè 123, SMA, Neuquen</p>
-            <p>Teléfono: (+54) 11-1111-1111</p>
-            <p>Correo electrónico:  contacto@casadelte.com</p>
-        </address>
-       
-        <div>
-            <a href="" target="_parent"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-        <p>2024 Casa del Tè | Todos los derechos reservados</p>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
