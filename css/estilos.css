@@ -25,7 +25,7 @@ h2{
     text-align: center;
 }
 
-/*Header*/
+/************ Header ************/
 .header{
     display: flex;
     justify-content: start; /* Alinear a la izquierda */
@@ -42,28 +42,27 @@ h2{
         
         .logo {
             width: 60px; 
-            height: auto; /* Mantener proporciones */
+            height: auto; 
             max-height: 100%;}
     }
 
     .navHeader {
         .ulItems {
-            display: flex; /* Usar flexbox para el menú */
-            list-style: none; /* Sin viñetas */
-            padding-left: 0; /* Sin padding en la lista */
-            margin: 0; /* Sin margen */
+            display: flex; 
+            list-style: none; 
+            padding-left: 0; 
+            margin: 0; 
             justify-content: flex-start; /* Alinear a la izquierda */
             
             .liItem {
-                margin-right: 15px; /* Margen a la derecha entre elementos */
+                margin-right: 15px; 
                 
                 a {
-                    text-decoration: none; /* Sin subrayado */
-                    color: #510d1b; /* Color del texto */
-                    font-size: 1.7em; /* Tamaño del texto */
+                    text-decoration: none; 
+                    color: #510d1b; 
+                    font-size: 1.7em;
                     transition: color 0.3s; /* Transición suave para el color */
                     
-                    /* Efecto de subrayado al pasar el mouse */
                     &:hover {
                         color: #b86d6d; /* Cambia el color al pasar el mouse */
                     }
@@ -73,8 +72,8 @@ h2{
     }
 }
 
-/*Main*/
-/*Seccion principal del main*/
+/************ Main ************/
+/* Seccion principal del main */
 .firstContent{
     padding-top: 50px;
     padding-bottom: 50px;
@@ -105,9 +104,9 @@ h2{
             font-size: 2.5em;
         }
         a{
-            display: inline-block;/*para usar las propiedades en bloque,como padding margin y border*/
+            display: inline-block;
             margin-top: 20px;
-            padding: 8px 16px; /* Ajuste en padding para un botón más grande */
+            padding: 8px 16px; 
             font-size: 2.5em;
             border: 1px solid rgb(255, 241, 241);
             border-radius: 2.5%;
@@ -129,18 +128,18 @@ h2{
 .ProductsIndex {
     h2 {
         padding-top: 20px;
-        text-align: center;  /* Centrado del título */
-        font-size: 2rem;     /* Tamaño de fuente adecuado */
+        text-align: center;  
+        font-size: 2rem;     
     }
 
     .galeryProducts {
-        width: 70%;           /* Ajustamos el tamaño de la galería */
+        width: 70%;          
         height: 70%;
         margin: 0 auto;
         padding-top: 25px;
         display: grid;
-        grid-template-columns: repeat(6, 0.5fr);  /* Tres columnas iguales */
-        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;     /* Las filas se ajustan automáticamente */
+        grid-template-columns: repeat(6, 0.5fr);  /* Seis columnas iguales */
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;    
         grid-template-areas: 
             "productOne productOne productTwo productTwo productThree productThree"
             "productOne productOne productTwo productTwo productThree productThree"
@@ -148,7 +147,7 @@ h2{
             "productOne productOne productFour productFour productFive productFive"
             "productSeven productSeven productSix productSix productFive productFive"
             "productSeven productSeven productSix productSix productFive productFive";
-        gap: 25px;
+        gap: 25px; /* Espacio entre tarjetas */
         overflow: hidden;  /* Evita que los elementos del grid se desborden */
     }
 
@@ -184,17 +183,17 @@ h2{
     }
     
     .cardIndexOne:hover .texto, .cardIndexTwo:hover .texto, .cardIndexThree:hover .texto, .cardIndexFour:hover .texto, .cardIndexFive:hover .texto, .cardIndexSix:hover .texto, .cardIndexSeven:hover .texto {
-        opacity: 1; /* Mostrar el texto de aumento */
+        opacity: 1; 
         color:rgba(241, 146, 146, 0.831);
     }
 
-    /* Efecto hover: aumentar la escala de la imagen */
+    /* Aumentar la escala de la imagen */
     .cardIndexOne:hover img, .cardIndexTwo:hover img, .cardIndexThree:hover img, .cardIndexFour:hover img, .cardIndexFive:hover img, .cardIndexSix:hover img, .cardIndexSeven:hover img {
         transform: scale(1.2);  /* Aumenta el zoom de la imagen */
         filter:grayscale(100%);
     }
 
-    /* Especificar áreas de las tarjetas */
+    /* Especificar áreas de las Cards */
     .cardIndexOne { grid-area: productOne; }
     .cardIndexTwo { grid-area: productTwo; }
     .cardIndexThree { grid-area: productThree; }
@@ -203,15 +202,15 @@ h2{
     .cardIndexSix { grid-area: productSix; }
     .cardIndexSeven { grid-area: productSeven; }
     
-    /* Medios para pantallas más pequeñas (Tablets) */
+    /* Tablets */
     @media (max-width: 1024px) {
         .galeryProducts {
             width: 90%;  /* Reducir el tamaño de la galería en tabletas */
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas en Tablet*/
         }
     }
 
-    /* Medios para pantallas móviles */
+    /* Mobiles */
     @media (max-width: 768px) {
         .galeryProducts {
             height: 70%;
@@ -227,19 +226,19 @@ h2{
             "productOne productOne productFour productFour productFive productFive"
             "productSeven productSeven productSix productSix productFive productFive"
             "productSeven productSeven productSix productSix productFive productFive";
-            gap: 25px;
+            gap: 25px; /* Espacio entre tarjetas */
             overflow: hidden;
         }
     }
 
     @media (max-width: 480px) {
         .galeryProducts {
-            width: 100%;  /* 100% del ancho en pantallas muy pequeñas */
+            width: 100%;  /* Galeria al 100% del ancho*/
             grid-template-columns: 1fr;  /* Una sola columna */
         }
 
         .cardIndexOne, .cardIndexTwo, .cardIndexThree, .cardIndexFour, .cardIndexFive, .cardIndexSix, .cardIndexSeven {
-            height: 200px;  /* Ajuste de altura para pantallas más pequeñas */
+            height: 200px;  
         }
     }
 }
@@ -251,21 +250,21 @@ h2{
         width: 80%;
         padding-top: 20px;
         margin: 0 auto;
-        display: grid; /* Usar grid */
-        grid-template-columns: repeat(6, 1fr); /* 4 columnas de igual tamaño */
+        display: grid; 
+        grid-template-columns: repeat(6, 1fr); 
         gap: 50px; /* Espacio entre tarjetas */
         .featuredCards {
             text-align: center;
-            padding: 15px; /* Ajustar el padding */
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con un poco de transparencia */
-            border: 1px solid #ddd; /* Borde suave */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            padding: 15px; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
             transition: transform 0.3s; /* Efecto de transformación suave */
             a {
-                text-decoration: none; /* Sin subrayado */
-                color: #510d1b; /* Color del texto */
-                font-size: 1em; /* Tamaño del texto */
+                text-decoration: none; 
+                color: #510d1b; 
+                font-size: 1em; 
                 transition: color 0.3s; /* Transición suave para el color */
                 
                 /* Efecto de subrayado al pasar el mouse */
@@ -282,8 +281,8 @@ h2{
 
             img {
                 max-width: 80%; /* Ajustar la imagen al 80% del contenedor */
-                height: auto; /* Mantener proporciones */
-                border-radius: 5px; /* Bordes redondeados en la imagen */
+                height: auto; 
+                border-radius: 5px; 
             }
         }
     }
@@ -299,9 +298,9 @@ h2{
         justify-content:center;
         text-align: center; 
         a{
-            display: inline-block;/*para usar las propiedades en bloque,como padding margin y border*/
+            display: inline-block;
             margin-top: 20px;
-            padding: 8px 16px; /* Ajuste en padding para un botón más grande */
+            padding: 8px 16px; 
             font-size: 1rem;
             border: 1px solid rgb(255, 241, 241);
             border-radius: 5px;
@@ -311,7 +310,7 @@ h2{
             transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
     
             &:hover {
-                transform: translateY(-2px); /* Efecto de elevación */
+                transform: translateY(-2px); 
                 box-shadow: -5px 0px 25px 6px rgba(0, 0, 0, 0.228);
                 color:rgba(241, 146, 146, 0.831);
             }
@@ -348,9 +347,9 @@ h2{
         }
     }
     .textUs {
-        width: 50%; /* Ajusta el ancho según lo necesites */
-        text-align: right; /* Alinea el texto a la derecha */
-        margin: 0 0 0 auto; /* Se asegura de que el texto esté debajo y pegado al margen derecho */
+        width: 50%; 
+        text-align: right; 
+        margin: 0 0 0 auto; 
         padding: 0.5rem 7rem 0.5rem 0rem;    
         font-size: 10px;
         color: rgb(244, 140, 140);
@@ -369,10 +368,10 @@ h2{
             text-decoration: none;
             color: #dfdede;
             box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
-            transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+            transition: background-color 0.3s, transform 0.3s; 
 
             &:hover {
-                transform: translateY(-2px); /* Efecto de elevación */
+                transform: translateY(-2px); 
                 box-shadow: -10px 0px 35px 12px rgba(0, 0, 0, 0.228);
                 color:rgba(241, 146, 146, 0.831);
             }
@@ -398,13 +397,14 @@ h2{
     }
 }
 
-/* Estilo general del Footer */
+/************ Footer ************/
+
 .footerStart {
     height: 100%;
-    background-color: #2c3e50; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
-    font-size: 1rem; /* Tamaño de fuente general */
-    padding: 2rem 2rem; /* Espaciado adecuado */
+    background-color: #2c3e50; 
+    color: #fff; 
+    font-size: 1rem; 
+    padding: 2rem 2rem; 
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
     grid-gap: 2rem; /* Espacio entre las columnas */
@@ -414,26 +414,23 @@ h2{
     gap: 2rem;
 }
 
-/* Ajustes a las columnas */
 .footer-column {
     display: flex;
-    flex-direction: column; /* Coloca los elementos verticalmente */
+    flex-direction: column; 
     align-items: flex-start; /* Alineación izquierda */
     gap: 1.5rem;
-    padding: 0 2rem; /* Espaciado dentro de cada columna */
+    padding: 0 2rem; 
 }
 
-/* Contenedor de los menús */
 .navMenu, .navInfo {
-    list-style: none; /* Elimina los puntos de lista */
+    list-style: none; 
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Coloca los elementos verticalmente */
+    flex-direction: column; 
     gap: 0.8rem;
 }
 
-/* Enlaces de los menús */
 .navMenu a, .navInfo a {
     text-decoration: none;
     color: #fff;
@@ -442,11 +439,11 @@ h2{
     transition: color 0.3s ease-in-out;
 }
 
-/* Efecto hover en los enlaces */
 .navMenu a:hover, .navInfo a:hover {
     color: #f39c12; /* Cambio de color al pasar el ratón */
 }
-/* footer bottom */
+
+/* whatsapp button */
 .fa-whatsapp{
     font-size: 2.5em;
     color:rgb(44, 181, 44);
@@ -455,6 +452,7 @@ h2{
     right: 20px;    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 /* Efecto hover en el icono de WhatsApp */
 .fa-whatsapp:hover {
     transform: translateY(-5px); /* Efecto de elevación */
@@ -491,7 +489,7 @@ gap: 0.8rem;
     }
 
     .footer-column {
-        align-items: center; /* Centra los elementos en móviles */
+        align-items: center; /* Centra los elementos en mobiles */
     }
 
     footer input[type="email"] {
@@ -500,23 +498,23 @@ gap: 0.8rem;
     }
 
     footer input[type="submit"] {
-        width: 100%; /* El botón ocupa todo el ancho en móviles */
+        width: 100%; 
     }
 
     footer p {
-        font-size: 1rem; /* Texto más pequeño en móviles */
+        font-size: 1rem; 
     }
 
     .redes .fa-instagram, 
     .redes .fa-facebook, 
     .redes .fa-twitter {
-        font-size: 2rem; /* Reducir tamaño de los iconos en móviles */
+        font-size: 2rem; 
     }
 }
 
 
-/* pantalla con maximo de 768px */
-@media screen and (max-width: 768px) {  /*0 a 768*/
+/* @media con maximo de 768px */
+@media screen and (max-width: 768px) { 
     .content {
        grid-template-areas:
        "header"
@@ -557,12 +555,12 @@ gap: 0.8rem;
 
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* Para pantallas móviles, una sola columna */
+        grid-template-columns: 1fr; /* Para pantallas mobiles, una sola columna */
     }.FeaturedProductsGalery {
         padding-top: 30px !important;
         margin: 0 auto;
-        display: grid  !important; /* Usar grid */
-        grid-template-columns: repeat(2, 2fr) !important; /* 4 columnas de igual tamaño */
+        display: grid  !important; 
+        grid-template-columns: repeat(2, 2fr) !important; /* 2 columnas de igual tamaño */
         width: 100%;
         padding-bottom: 5%;
         flex-wrap: wrap;
@@ -607,9 +605,9 @@ gap: 0.8rem;
     }
 
     .contentUsText {
-        width: 50%; /* Ajusta el ancho según lo necesites */
+        width: 50%; 
         text-align: right; /* Alinea el texto a la derecha */
-        margin: 0 0 0 auto; /* Se asegura de que el texto esté debajo y pegado al margen derecho */
+        margin: 0 0 0 auto; 
         padding: 0.5rem 7rem 0.5rem 0rem;    
         font-size: 10px;
         color: rgb(244, 140, 140);
